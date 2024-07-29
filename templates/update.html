@@ -1,0 +1,20 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form action="{% url 'update' ob.id%}" method="post">
+        {% csrf_token %}
+        <label for="firstname">Firstname</label>
+        <input type="text" id="firstname" name="firstname" value="{{ob.firstname}}">
+        <label for="lastname">Lastname</label>
+        <input type="text" id="lastname" name="lastname" value="{{ob.lastname}}">
+        <br>
+               <button type="submit">submit</button>
+    </form>
+</body>
+</html>
